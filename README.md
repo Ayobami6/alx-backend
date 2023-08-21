@@ -1,0 +1,4 @@
+## API Pagination
+
+### HATEOAS
+
