@@ -24,9 +24,10 @@ class BasicCache(BaseCaching):
             key (str): Item key
             item (Any): Item to be added
         """
-        if key is None or item is None:
+        if key or item is None:
             pass
-        self.cache_data[key] = item
+        else:
+            self.cache_data[key] = item
 
     def get(self, key: str) -> Any:
         """ get item by key method for the cache storage
