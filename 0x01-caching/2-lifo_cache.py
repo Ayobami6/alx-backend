@@ -28,17 +28,14 @@ class LIFOCache(BaseCaching):
             item (any): key value
         """
         keys = self._keys
-        if key or item is None:
-            pass
-        # if key in self.cache_data:
-        #     self.cache_data[key] = item
-        if len(self.cache_data) >= LIFOCache.MAX_ITEMS\
-                and key not in self.cache_data:
-            discarded = self.cache_data.pop(keys[-1])
-            print(f"DISCARD: {keys[-1]}")
-            keys.pop(-1)
-        keys.append(key)
-        self.cache_data[key] = item
+        if key is not None and item is not None:
+            if len(self.cache_data) >= LIFOCache.MAX_ITEMS\
+                    and key not in self.cache_data:
+                discarded = self.cache_data.pop(keys[-1])
+                print(f"DISCARD: {keys[-1]}")
+                keys.pop(-1)
+            keys.append(key)
+            self.cache_data[key] = item
 
     def get(self, key: str) -> Any:
         """ get item by key method for the cache storage
