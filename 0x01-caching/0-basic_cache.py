@@ -7,13 +7,12 @@ from typing import Any
 from dataclasses import dataclass
 
 
-@dataclass
 class BasicCache(BaseCaching):
 
     """ Base cache class
     """
 
-    def __post_init__(self) -> None:
+    def __init__(self) -> None:
         """ instance method
         """
         super().__init__()
