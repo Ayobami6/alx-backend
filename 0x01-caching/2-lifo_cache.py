@@ -15,10 +15,18 @@ class LIFOCache(BaseCaching):
     # KEYS: List[str] = []
 
     def __post_init__(self):
+        """ instance method
+        """
         super().__init__()
         self._keys = []  # just for the class dsa
 
     def put(self, key, item) -> None:
+        """ add to cache method
+
+        Args:
+            key (str): cache dict key
+            item (any): key value
+        """
         keys = self._keys
         if key or item is None:
             pass
