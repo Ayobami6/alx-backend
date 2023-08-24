@@ -4,7 +4,7 @@
 
 from base_caching import BaseCaching
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Union
 
 
 @dataclass
@@ -20,7 +20,7 @@ class LFUCache(BaseCaching):
         self._freq = {}  # Dictionary to store frequency of each item
         self._count = 0
 
-    def get_least_frequent_key(self) -> None | str:
+    def get_least_frequent_key(self) -> Union[None, str]:
         """ gets the least frequently used key
 
         Returns:
