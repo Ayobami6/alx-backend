@@ -20,7 +20,12 @@ class LFUCache(BaseCaching):
         self._freq = {}  # Dictionary to store frequency of each item
         self._count = 0
 
-    def get_least_frequent_key(self):
+    def get_least_frequent_key(self) -> None | str:
+        """ gets the least frequently used key
+
+        Returns:
+            None | str: key or None if key couldn't not get key
+        """
         least_freq = min(self._freq.values())
         # print(self._freq.items())
         for key, freq in self._freq.items():
