@@ -50,7 +50,7 @@ const jobs = [
 ];
 
 jobs.forEach((jobData) => {
-  const job = queue.create('push_notification_code', jobData).save((err) => {
+  const job = queue.create('push_notification_code_2', jobData).save((err) => {
     if (err) {
       throw err;
     } else {
